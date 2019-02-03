@@ -38,8 +38,13 @@ public class RegistracioniServlet extends HttpServlet {
 		HibernateMetode metode = new HibernateMetode();
 		if(validacija.daLiJePrazno(password)&& validacija.daLiJePrazno(ime)&& validacija.daLiJePrazno(repeatedPassword)&& validacija.daLiJePrazno(userName)) {
 			if(validacija.daLiJePassIsti(password, repeatedPassword)) {
-				metode.ubaciUsera(ime, userName, repeatedPassword);
-				response.sendRedirect("index.html");
+				String sifrovaniPassword = validacija.konvertujPasswordUSifru(password);
+				if(sifrovaniPassword !=null) {
+					metode.ubaciUsera(ime, userName, sifrovaniPassword);
+					response.sendRedirect("index.html");
+				}else {
+					response.sendRedirect("htmlovi/registracija.html");
+				}	
 			}else {
 				response.sendRedirect("htmlovi/registracija.html");
 			}
