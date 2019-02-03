@@ -5,7 +5,7 @@ import java.security.NoSuchAlgorithmException;
 
 public class Validacija {
 	
-	public boolean daLiJePrazno(String polje) {
+	public boolean daLiNijePrazno(String polje) {
 		
 		if(polje !="" && polje != null) {
 			return true;

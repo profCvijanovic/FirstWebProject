@@ -7,3 +7,10 @@
 	border: 1px solid black;
 	border-radius: 5px;
 }
+
+h1{
+	font-family: "Comic Sans MS";
+	font-weight: bold;
+	color: red;
+	font-size: 120%;
+}

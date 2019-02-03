@@ -36,7 +36,7 @@ public class RegistracioniServlet extends HttpServlet {
 		
 		Validacija validacija = new Validacija();
 		HibernateMetode metode = new HibernateMetode();
-		if(validacija.daLiJePrazno(password)&& validacija.daLiJePrazno(ime)&& validacija.daLiJePrazno(repeatedPassword)&& validacija.daLiJePrazno(userName)) {
+		if(validacija.daLiNijePrazno(password)&& validacija.daLiNijePrazno(ime)&& validacija.daLiNijePrazno(repeatedPassword)&& validacija.daLiNijePrazno(userName)) {
 			if(validacija.daLiJePassIsti(password, repeatedPassword)) {
 				String sifrovaniPassword = validacija.konvertujPasswordUSifru(password);
 				if(sifrovaniPassword !=null) {
